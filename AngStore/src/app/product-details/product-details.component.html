@@ -1,1 +1,7 @@
-<p>product-details works!</p>
+<h2>Product Details</h2>
+
+<div *ngIf="product"> <!-- If there is a product -->
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency }}</h4> <!-- use CurrencyPipe to display product.price as a currency string -- https://angular.io/guide/pipes -->
+    <p>{{ product.description }}</p>
+</div>

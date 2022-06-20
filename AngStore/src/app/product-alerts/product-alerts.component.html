@@ -1,0 +1,3 @@
+<p *ngIf="product && product.price > 700"> <!-- if product exists and product's price is over $700 -->
+    <button (click)="notify.emit()">Notify Me</button>  <!-- show and operate the `Notify Me` button so that when the product goes on sale, I'll be notified -->
+</p>

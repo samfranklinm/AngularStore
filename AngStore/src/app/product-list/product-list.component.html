@@ -1,26 +1,30 @@
 <h2>Products</h2>
 
-<div *ngFor = "let product of products"> <!-- For each product in the array of products in `products.ts` -->
-    <h3>
-        <a [title]="product.name + ' details ' "
-           [routerLink]="['/products', product.id]"> <!-- display the product name as a link and hovering shows details -->
-            {{product.name}}
-        </a>
-    </h3>
+<div *ngFor="let product of products">
+  <!-- For each product in the array of products in `products.ts` -->
+  <h3>
+    <a
+      [title]="product.name + ' details '"
+      [routerLink]="['/products', product.id]"
+    >
+      <!-- display the product name as a link and hovering shows details -->
+      {{ product.name }}
+    </a>
+  </h3>
 
-    <p *ngIf="product.description">  <!-- If there is a description, display the <p> -->
-        Description: {{ product.description }}
-    </p>
+  <p *ngIf="product.description">
+    <!-- If there is a description, display the <p> -->
+    Description: {{ product.description }}
+  </p>
 
-    <button (click) = "share()"> <!-- On click, execute share function in `product-list.component.ts` -->
-        Share
-    </button>
+  <button (click)="share()">
+    <!-- On click, execute share function in `product-list.component.ts` -->
+    Share
+  </button>
 
-     <!-- show Child Component here (Parent Component) -->
-    <app-product-alerts         
-      [product] = "product"       
-      (notify)="onNotify()">
-    </app-product-alerts>
+  <!-- show Child Component here (Parent Component) -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
 
 <!-- 
